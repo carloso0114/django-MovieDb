@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} Peliculas {% endblock %}
+
+{% block body %}
+<button onclick="window.location.href='/'">Inicio</button>
+<h1>Lista de Peliculas</h1>
+<ul>
+  {% for pelicula in object_list %}
+  <li>
+    <a href='pelicula/{{pelicula.id}}''><span class="nombre_peliculla">{{ pelicula }}</span>
+    {% endfor %}
+    </a>
+  </li>
+</ul>
+{% endblock %}

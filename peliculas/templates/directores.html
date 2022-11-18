@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %} Directores {% endblock %}
+
+{% block body %}
+<button onclick="window.location.href='/'">Inicio</button>
+<h1>Lista de Directores</h1>
+<ul>
+  {% for director in object_list %}
+  <li>
+    <a href='director/{{director.id}}''><span class="nombre_director">{{ director }}</span>
+    {% endfor %}
+    </a>
+  </li>
+</ul>
+{% endblock %}

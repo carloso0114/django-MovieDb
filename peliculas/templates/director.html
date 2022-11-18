@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} Director - {{ director.name }} {% endblock %}
+
+{% block body %}
+<button onclick="window.location.href='/'">Inicio</button>
+<h3>Nombre: {{ director.name }}</h3>
+<h3>Fecha de nacimiento: {{ director.fechaNacimiento }}</h3>
+<h3>Peliculas:</h3>
+<ul>
+  {% for pelicula in director.pelicula_set.all %}
+  <li>
+    <a href='/pelicula/{{pelicula.id}}'">
+        <span class=" nombre_pelicula">{{ pelicula }}</span>
+    </a>
+    {% empty %}
+    <td>No hay peliculas aún</td>
+    {% endfor %}
+  </li>
+</ul>
+{% endblock %}

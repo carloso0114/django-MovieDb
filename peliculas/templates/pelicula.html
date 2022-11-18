@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} Pelicula - {{ pelicula.title }} {% endblock %}
+
+{% block body %}
+<button onclick="window.location.href='/'">Inicio</button>
+<h3>Nombre: {{ pelicula.title }}</h3>
+<h3>Autor:
+  {% for author in pelicula.author.all %}
+  <span>
+    {{ author }} -
+  </span>
+  {% endfor %}
+</h3>
+<h3>Estreno: {{ pelicula.year }}</h3>
+<h3>Sipnosis:</h3>
+<p>{{ pelicula.summary }}</p>
+{% endblock %}
